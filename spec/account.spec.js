@@ -91,7 +91,7 @@ describe('Testing the Account and Transaction classes', () => {
     })
 
 
-    it('Tests that it updates the balance after multiple transactions', () => {
+    it('Tests that it updates the balance after multiple transactions debit and credit', () => {
 
         let transaction2 = new Transactions(new Date(2022, 10, 22), 0, 500)
         let transaction3 = new Transactions(new Date(2022, 10, 22), 200, 0)
