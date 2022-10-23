@@ -10,6 +10,7 @@ export default class Transactions {
         this.#date = date;
         this.#creditAmount = creditAmount;
         this.#debitAmount = debitAmount;
+        this.#currentBalance = 0
 
     }
 

@@ -12,7 +12,7 @@ export default class Statement {
             } else {
                 transactionStatement += `         || ${transactions[i].getDebitAmount().toFixed(2)} || `
             }
-            transactionStatement += `${transactions[i].getCurrentBalance()}`
+            transactionStatement += transactions[i].getCurrentBalance().toFixed(2)
             console.log(transactionStatement)
         }
 

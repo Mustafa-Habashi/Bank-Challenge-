@@ -3,7 +3,7 @@ import Transactions from "../src/transactions.js";
 
 
 
-describe('printStatement() console.log() test', () => {
+describe('printStatement console.log() test', () => {
     let transaction1;
     let transaction2;
     let transaction3;
@@ -26,7 +26,7 @@ describe('printStatement() console.log() test', () => {
 
         Statement.printStatement(mockTransactions);
 
-        expect(consoleLogSpy).toHaveBeenCalledTimes((mockTransactions.length + 1));
+        expect(consoleLogSpy).toHaveBeenCalled();
     });
 });
 

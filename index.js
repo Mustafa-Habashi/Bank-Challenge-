@@ -1,4 +1,4 @@
-import Account from "./src/Account.js";
+import Account from "./src/account.js";
 import Statement from "./src/statement.js";
 import Transactions from "./src/transactions.js";
 
