@@ -1,10 +1,10 @@
 export default class Account {
 
-    #currentBalance;
+    #balance;
     #transactionsArray;
 
-    constructor(currentBalance = 0) {
-        this.#currentBalance = currentBalance;
+    constructor(balance = 0) {
+        this.#balance = balance;
         this.#transactionsArray = [];
 
     }
@@ -21,8 +21,8 @@ export default class Account {
         return this.#transactionsArray
     }
 
-    getCurrentBalance() {
-        return this.#currentBalance;
+    getBalance() {
+        return this.#balance;
     }
 
 

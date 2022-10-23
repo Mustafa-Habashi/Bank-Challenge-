@@ -15,7 +15,7 @@ describe('intisialsation of the bank account', () => {
 
         let bankAccounnt1 = new Account();
 
-        let result = bankAccounnt1.getCurrentBalance()
+        let result = bankAccounnt1.getBalance()
 
         expect(result).toBe(0);
     })
