@@ -92,7 +92,6 @@ So that the transaction can be stored into my account
 | Objects      | Properties              | Messages                            | Output    |
 | ------------ | ----------------------- | ----------------------------------- | --------- |
 | Account      | balance(@int)           | getBalance()                        | @interger |
-
 |              | transactionArray@Array |getTransactions(@Transactions) | @Array    |
 |              |                         | addTransactions(@Transactions)   | @void     |
 | Transactions | date                    | getDate()                           | @date     |
@@ -128,7 +127,6 @@ So that the transaction can be stored into my account
 | Objects      | Properties              | Messages                            | Output    |
 | ------------ | ----------------------- | ----------------------------------- | --------- |
 | Account      | balance(@int)           | getBalance()                        | @interger |
-
 |              | transactionArray@Array |getTransactions(@Transactions) | @Array    |
 |              |                         | addTransactions(@Transactions)   | @void     |
 | Transactions | date                    | getDate()                           | @date     |
@@ -150,6 +148,7 @@ As a user i am able print out a statement to see my recent transactions
 
 ### Domain Model
 
+| Objects      | Properties              | Messages                            | Output    |
 | Statement    |                         | print(@Transactions)                      |           |
 
 ### Tests for User Story 4
