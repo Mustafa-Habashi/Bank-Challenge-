@@ -22,7 +22,7 @@ export default class Account {
     }
 
     getCurrentBalance() {
-        return this.currentBalance;
+        return this.#currentBalance;
     }
 
 
