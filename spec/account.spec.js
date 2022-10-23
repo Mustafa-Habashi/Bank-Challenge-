@@ -25,42 +25,50 @@ describe('intisialsation of the bank account', () => {
 })
 
 
+
 describe('Testing the Account and Transaction classes decoupling', () => {
     let bankAccounnt1;
-    let transaction1;
+    let mocktransaction2;
 
     beforeEach(() => {
-        bankAccounnt1 = new Account();
-        transaction1 = new Transactions(new Date(2022, 10, 22), 1000, 0)
+        bankAccounnt1 = new Account(1000);
+
+
+        mocktransaction2 = {
+            date: '12/1/2012', creditAmount: 0, debitAmount: 500, currentBalance: 0,
+            getCreditAmount: () => {
+                return 0
+            },
+
+            getDebitAmount: () => {
+                return 500
+            },
+
+            setCurrentBalance: () => {
+                return 500
+            },
+            getCurrentBalance: () => {
+                return 500
+            }
+        }
 
     })
 
     afterEach(() => {
         bankAccounnt1 = undefined;
-        transaction1 = undefined;
 
     })
 
-    it('Tests that transaction gets added to the array when called', () => {
+    it('Tests getDebitAmount is called using spy Function', () => {
+
+        const transactionSpy = spyOn(mocktransaction2, 'getDebitAmount')
 
 
-        bankAccounnt1.addTransactions(transaction1)
-        let result = bankAccounnt1.getTransactions().length;
+        bankAccounnt1.addTransactions(mocktransaction2)
 
-        expect(result).toEqual(1)
-
-    })
-
-    it('Tests that the balance updates when transactions are added/ credit is added', () => {
-
-
-        bankAccounnt1.addTransactions(transaction1)
-        let result = transaction1.getCurrentBalance();
-
-        expect(result).toEqual(1000)
+        expect(transactionSpy).toHaveBeenCalled();
 
     })
-
 
 })
 
@@ -108,3 +116,56 @@ describe('Testing the Account and Transaction classes', () => {
 
 
 })
+
+
+describe('Testing the Account and Transaction classes decoupling', () => {
+    let bankAccounnt1;
+    let mocktransaction2;
+
+    beforeEach(() => {
+        bankAccounnt1 = new Account();
+
+        mocktransaction2 = {
+            date: '12/1/2012', creditAmount: 1000, debitAmount: 0, currentBalance: 0,
+            getCreditAmount: () => {
+                return 1000
+            },
+
+            setCurrentBalance: () => {
+                return 1000
+            },
+            getCurrentBalance: () => {
+                return 1000
+            }
+        }
+
+    })
+
+    afterEach(() => {
+        bankAccounnt1 = undefined;
+
+    })
+
+    it('Tests that transaction gets added to the array when called', () => {
+
+
+        bankAccounnt1.addTransactions(mocktransaction2)
+        let result = bankAccounnt1.getTransactions().length;
+
+        expect(result).toEqual(1)
+
+    })
+
+    it('Tests that the balance updates when transactions are added/ credit is added', () => {
+
+
+        bankAccounnt1.addTransactions(mocktransaction2)
+        let result = mocktransaction2.getCurrentBalance();
+
+        expect(result).toEqual(1000)
+
+    })
+
+
+})
+
