@@ -11,5 +11,14 @@ describe('intisialsation of the bank account', () => {
         expect(result).toBe(0);
     })
 
+    it('Gets current balance of the account (defalut is set to zero)', () => {
+
+        let bankAccounnt1 = new Account();
+
+        let result = bankAccounnt1.getCurrentBalance()
+
+        expect(result).toBe(0);
+    })
+
 
 })
