@@ -13,7 +13,7 @@ export default class Account {
         if (transaction.getCreditAmount() != 0) {
             this.#balance += transaction.getCreditAmount()
         } else {
-            this.#balance += transaction.getDebitAmount()
+            this.#balance -= transaction.getDebitAmount()
         }
         transaction.setCurrentBalance(this.#balance)
         this.#transactionsArray.push(transaction)
