@@ -28,6 +28,16 @@ export default class Transactions {
     }
 
 
+    setCurrentBalance(balance) {
+        this.#currentBalance = balance;
+    }
+
+    getCurrentBalance() {
+        return this.#currentBalance;
+    }
+
+
+
 
 
 
